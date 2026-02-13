@@ -197,7 +197,10 @@ console.log(rocky_movies["Rocky III"].year);
 console.log(rocky_movies["Rocky III"]["year"]);
 
 
+// Objeto de la tierra con continentes, paises, estados y ciudades
+
 const tierra = { 
+
     continentes: {
         America: {
             Mexico: {
@@ -217,23 +220,69 @@ const tierra = {
         },
     },
     
-    //Metodos para obtener los continentes, paises, estados y ciudades
-    continentes(){
-        //Obtener los continentes de la tierra
+
+    //Metodo para obtener los continentes
+    obtenerContinentes(){
+        //Obtener los continentes de la tierra 
         for (let continente in this.continentes) {
-            console.log(continente);
+            console.log("Continente: " + continente);
         }
     },
-    paises(){},
-    estados(){},
-    ciudades(){}
 
+    //Metodo para obtener los paises
+    obtenerPaises(){
+        //Obtener los paises de cada continente
+        for (let continente in this.continentes) {
+            console.log("Continente: " + continente);
+            for (let pais in this.continentes[continente]) {
+                console.log("Pais: " + pais);
+            }
+        }
+    },
+    
+    //Metodo para obtener los estados
+    obtenerEstados(){
+        //Obtener los estados de cada pais
+        for (let continente in this.continentes) {
+            console.log("Continente: " + continente);
+            for (let pais in this.continentes[continente]) {
+                console.log("Pais: " + pais);
+                if (this.continentes[continente][pais].estados) {
+                    for (let estado of this.continentes[continente][pais].estados) {
+                        console.log("Estado: " + estado);
+                    }
+                }
+            }
+        }
+    },
+
+    //Metodo para obtener las ciudades
+    obtenerCiudades(){
+        //Obtener las ciudades de cada pais
+        for (let continente in this.continentes) {
+            console.log("Continente: " + continente);
+            for (let pais in this.continentes[continente]) {
+                console.log("Pais: " + pais);
+                if (this.continentes[continente][pais].ciudades) {
+                    for (let ciudad of this.continentes[continente][pais].ciudades) {
+                        console.log("Ciudad: " + ciudad);
+                    }
+                }
+            }
+        }
+    }
 };
 
-// Imprimir de la siguiente forma
+//Obtener los continentes de la tierra
+tierra.obtenerContinentes();
 
-//Continentes: America, Europa..
-//Paises: Mexico, USA, España, Francia..
-//Estados: Ciudad de Mexico, Guadalajara..
-//Ciudades: Madrid, Barcelona..
+//Obtener los paises de la tierra
+tierra.obtenerPaises();    
+
+//Obtener los estados de la tierra
+tierra.obtenerEstados();
+
+//Obtener las ciudades de la tierra
+tierra.obtenerCiudades();
+
 

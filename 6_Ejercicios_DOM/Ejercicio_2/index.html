@@ -1,0 +1,43 @@
+                                            <!-- Ejercicio 2: Mostrar u ocultar un contenido
+
+        Objetivo: Crear una página que tenga un párrafo oculto por defecto. Al hacer clic en un botón, 
+        el párrafo debe aparecer, y al hacer clic nuevamente, el párrafo debe desaparecer.
+
+        Instrucciones:
+        1. Crea una página HTML con un párrafo y un botón.
+        2. El párrafo debe estar inicialmente oculto (puedes usar la propiedad display: none; en CSS).
+        3. Cuando el usuario haga clic en el botón, el párrafo debe aparecer si está oculto, o desaparecer si ya está visible.
+        4. El texto del botón debe cambiar cada vez que el usuario haga clic: si el párrafo está oculto, el botón debe decir "Mostrar contenido", y si está visible, debe decir "Ocultar contenido". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar contenido con JavaScript</title>
+</head>
+<body>
+
+    <h1 id="titulo">¡Bienvenido a mi página!</h1>
+
+    <p  id="parrafo" style="display: none;">Este es el contenido inicial.</p>
+
+    <button id="cambiarContenido">Cambiar Contenido</button>
+    
+
+    <script>
+        // Paso 1: Seleccionar los elementos del DOM
+        let titulo = document.getElementById('titulo');
+        let parrafo = document.getElementById('parrafo');
+        let boton = document.getElementById('cambiarContenido');
+
+        // Paso 2: Agregar un evento al botón
+        boton.addEventListener('click', function() {
+            // Paso 3: Cambiar el contenido del título y del párrafo
+            boton.textContent = parrafo.style.display === 'none' ? 'Ocultar contenido' : 'Mostrar contenido';
+            parrafo.style.display = parrafo.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+</html>

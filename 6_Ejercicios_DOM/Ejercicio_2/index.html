@@ -31,12 +31,23 @@
         let parrafo = document.getElementById('parrafo');
         let boton = document.getElementById('cambiarContenido');
 
-        // Paso 2: Agregar un evento al botón
+        // Paso 2: Agregar un evento al botón para mostrar u ocultar el párrafo mediante If-else
         boton.addEventListener('click', function() {
-            // Paso 3: Cambiar el contenido del título y del párrafo
-            boton.textContent = parrafo.style.display === 'none' ? 'Ocultar contenido' : 'Mostrar contenido';
-            parrafo.style.display = parrafo.style.display === 'none' ? 'block' : 'none';
+            if (parrafo.style.display === 'none') {
+                parrafo.style.display = 'block';
+                boton.textContent = 'Ocultar contenido';
+            } else {
+                parrafo.style.display = 'none';
+                boton.textContent = 'Mostrar contenido';
+            }
         });
+
+        // Solucion alterna: Agregar un evento al botón para mostrar u ocultar el párrafo mediante operadores ternarios
+ //            boton.addEventListener('click', function() {
+ //            parrafo.style.display = parrafo.style.display === 'none' ? 'block' : 'none';
+//             boton.textContent = parrafo.style.display === 'none' ? 'Mostrar contenido' : 'Ocultar contenido';
+//      });
+
     </script>
 
 </body>

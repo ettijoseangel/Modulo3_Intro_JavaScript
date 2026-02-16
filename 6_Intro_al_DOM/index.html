@@ -40,7 +40,32 @@ Instrucciones:
     <!-- Paso 3: Creamos un contenedor para mostrar los comentarios -->
     <div id="comentarios"></div>
 
-    
+    <!-- Paso 4: Agregamos el script para manejar el evento de envío del formulario -->
+    <script>
+
+        // Seleccionamos el formulario y el contenedor de comentarios
+        let formulario = document.getElementById('cajaComentarios');
+        let contenedorComentarios = document.getElementById('comentarios');
+
+        // Agregamos un evento de escucha para el envío del formulario
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault(); // Con este metodo evitamos que la página se recargue al enviar el formulario
+
+            // Obtenemos los valores de los campos de texto
+            let nombre = document.getElementById('nombre').value;
+            let apellido = document.getElementById('apellido').value;
+            let comentario = document.getElementById('comentario').value;
+            let fecha = new Date(); // Obtenemos la fecha y hora actual
+            let fechaFormateada = fecha.toLocaleString("en-US"); // Formateamos la fecha
+
+            // Creamos un nuevo elemento para el comentario
+            let nuevoComentario = document.createElement('div');
+            nuevoComentario.innerHTML = `<strong>${nombre} ${apellido}</strong> (${fechaFormateada}): <p>${comentario}</p>`;
+            contenedorComentarios.appendChild(nuevoComentario);
+
+            // Limpiamos los campos del formulario después de agregar el comentario
+            formulario.reset();
+        });
             
     </script>
 </body>

@@ -82,6 +82,13 @@ h1{
     margin-bottom: 20px;
 }
 
+.checkbox-group{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
 input[type="checkbox"]{
     appearance: none;
     -webkit-appearance: none;

@@ -12,6 +12,11 @@
     --almost-white: #E6E5EA;
     --grey-text: #817D92;
     --dark-background: #1A1A1D;
+
+    --red: #e62e1b;
+    --orange: #e67e22;
+    --yellow: #ffff00;
+    --green: #32cd32;
 }
 
 body{
@@ -34,6 +39,23 @@ body{
     margin-bottom: 15px;
 }
 
+.copy-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    color: var(--neon-green); /* Usando tu variable */
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+/* Efecto opcional: que brille al pasar el mouse */
+.copy-btn:hover .material-symbols-outlined {
+    filter: drop-shadow(0 0 5px var(--neon-green));
+}
+
 .longitud{
     display: flex;
     justify-content: space-between;
@@ -42,7 +64,7 @@ body{
 #length{
     width: 100%;
     appearance: none;
-    background-color: var(--neon-green);
+    background-color: var(--neon-green); 
     height: 5px;
     cursor: pointer;
 

@@ -179,14 +179,29 @@ label{
 
 }
 
+
+
 .strength-text{
     font-size: 0.9rem;
-    color: var(--grey-text);
+    color: var(--grey-text); 
+}
+
+.strength-rating{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#strength-level{
+    font-size: 1.2rem;
+    color: var(--almost-white);
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .barra-container{
     display: flex;
-    gap: 5px;
+    gap: 8px;
 }
 
 .barra{

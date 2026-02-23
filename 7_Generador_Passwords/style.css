@@ -39,6 +39,13 @@ body{
     margin-bottom: 15px;
 }
 
+.password-generada{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
 .copy-btn {
     background: transparent;
     border: none;
@@ -58,8 +65,28 @@ body{
 
 .longitud{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
+
+.text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#length-title{
+    color: var(--almost-white);
+    font-size: 1.0rem;
+}
+
+#length-label{
+    color: var(--neon-green);
+    font-size: 2.0rem;
+}
+
 
 #length{
     width: 100%;
@@ -83,6 +110,7 @@ body{
     background-color: transparent;
     border: none;
     color: var(--almost-white);
+    font-family: 'JetBrains Mono', monospace;
     font-size: 1.5rem;
     width: 90%;
 }
@@ -97,12 +125,6 @@ h1{
     margin-bottom: 30px;
 }
 
-.longitud{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
 
 .checkbox-group{
     display: flex;

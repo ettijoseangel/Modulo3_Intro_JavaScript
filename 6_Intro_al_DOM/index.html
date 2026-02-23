@@ -56,16 +56,37 @@ Instrucciones:
             let apellido = document.getElementById('apellido').value;
             let comentario = document.getElementById('comentario').value;
             let fecha = new Date(); // Obtenemos la fecha y hora actual
-            let fechaFormateada = fecha.toLocaleString("en-US"); // Formateamos la fecha
+            let fechaFormateada = fecha.toLocaleString("es-MX"); // Formateamos la fecha y hora para mostrarla en español
 
-            // Creamos un nuevo elemento para el comentario
+            // Creamos un nuevo elemento contenedor del comentario
             let nuevoComentario = document.createElement('div');
-            nuevoComentario.innerHTML = `<strong>${nombre} ${apellido}</strong> (${fechaFormateada}): <p>${comentario}</p>`;
+            nuevoComentario.style.borderBottom = "1px solid #ccc"; // Agregamos un estilo para separar los comentarios
+            nuevoComentario.style.marginBottom = "10px"; // Agregamos un margen inferior para separar los comentarios
+
+            //Insertamos el texto y el boton de eliminar comentario
+            nuevoComentario.innerHTML = `
+            <strong>${nombre} ${apellido}</strong> (${fechaFormateada}) 
+            <p>${comentario}</p>
+            <button class="btn-eliminar">Eliminar comentario</button>
+            `;
+
+            //Buscamos el boton de eliminar comentario y le agregamos un evento de escucha para eliminar el comentario al hacer clic
+            let botonEliminar = nuevoComentario.querySelector('.btn-eliminar');
+            botonEliminar.addEventListener('click', eliminarComentario);
+
+            //Agregamos el nuevo comentario al contenedor de comentarios
             contenedorComentarios.appendChild(nuevoComentario);
 
             // Limpiamos los campos del formulario después de agregar el comentario
             formulario.reset();
         });
+
+        // Paso 6: Funcion para eliminar un comentario
+        function eliminarComentario(event) {
+
+            let comentario_borrar = event.target.parentElement; // Obtenemos el elemento del comentario
+            comentario_borrar.remove(); // Eliminamos el comentario del contenedor
+        }
             
     </script>
 </body>

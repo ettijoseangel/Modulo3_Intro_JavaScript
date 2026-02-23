@@ -5,7 +5,6 @@ const length_input = document.getElementById('length'); //Input para seleccionar
 const length_label = document.getElementById('length-label'); //Label que muestra la longitud seleccionada
 
 //Elementos de tipo checkbox
-
 const uppercase_checkbox = document.getElementById('uppercase'); //Checkbox para incluir mayúsculas
 const lowercase_checkbox = document.getElementById('lowercase'); //Checkbox para incluir minúsculas
 const numbers_checkbox = document.getElementById('numbers'); //Checkbox para incluir números
@@ -37,6 +36,12 @@ const generatePassword = (lenght, uppercase, lowercase, numbers, symbols) => {
         return ''; //Se devuelve una cadena vacía para evitar generar una contraseña sin caracteres
     }
 
+    //Si no selecciona una longitud mayor a 0, devuelve una alerta
+    if (length_input.value <= 0) { //Si el valor del input de longitud es menor o igual a 0, significa que el usuario no seleccionó una longitud válida para generar la contraseña
+        alert('Por favor, selecciona una longitud mayor a 0 para generar la contraseña.'); //Si el usuario no seleccionó una longitud válida, se muestra una alerta
+        return ''; //Se devuelve una cadena vacía para evitar generar una contraseña sin longitud
+    }
+
     let password = ''; //Variable que almacenará la contraseña generada
     for (let i = 0; i < lenght; i++) { //Bucle que se ejecuta "lenght" veces, donde "lenght" es la longitud de la contraseña seleccionada por el usuario    
         const randomIndex = Math.floor(Math.random() * characters.length); //Generamos un índice aleatorio para seleccionar un carácter de la variable "characters"
@@ -61,7 +66,7 @@ generate_btn.addEventListener('click', () => {
 const actualizarStrengthMeter = () => {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked'); //Seleccionamos todos los checkboxes del formulario que están marcados
     const barras = document.querySelectorAll('.barra'); //Seleccionamos todas las barras de fuerza
-    const strengthTexto = document.querySelector(".strength-meter span:nth-child(2)"); // Donde dira "MEDIA", "FUERTE", etc
+    const strengthTexto = document.getElementById('strength-level'); //Seleccionamos el elemento donde se muestra el texto de la fuerza de la contraseña
 
     //1. Reseteamos las barras de fuerza
     barras.forEach(barra => {

@@ -95,7 +95,7 @@ const actualizarStrengthMeter = () => {
         });
         strengthTexto.textContent = "FUERTE"; //Actualizamos el texto de la fuerza a "FUERTE"
     } else {
-        strengthTexto.textContent = "FUERZA: "; //Si no hay ningún checkbox marcado, se muestra el texto original sin fuerza
+        strengthTexto.textContent = "SIN FUERZA"; //Si no hay ningún checkbox marcado, se muestra el texto "sin fuerza"
     }
 };
 

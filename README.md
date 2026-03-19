@@ -39,8 +39,8 @@ El objetivo de este proyecto es permitir que los estudiantes practiquen concepto
     - 7.2. Acceder a Clases CSS.
     - 7.3. Práctica: Generador de Passwords.
 - 8. Proyecto Final (DOM)
- - 8.1. El LocalStorage (Tema Bonus)
- - 8.2. Práctica: App de Comentarios.
+     - 8.1. El LocalStorage (Tema Bonus)
+     - 8.2. Práctica: App de Comentarios.
 ---
 
 ## Instrucciones para entender los apuntes:
